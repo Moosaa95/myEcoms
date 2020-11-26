@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    if (hasErrors)
+        each message in messages
+            .small-message = message
+
+    form(method='POST', action='/users/register')
+        i.fas.fa-twitter
+        i.fas.fa-times-circle
+            .form-group
+                label  Name:
+                input.form-control(name='name', type='text' required)
+            .form-group
+                label Email
+                input.form-control(name='email', type=text required)
+            .form-group
+                label Password
+                input.form-control(name='password', type=password required)
+            .form-group
+                label Confirm
+                input.form-control(name='password2', type=password)
+            br
+            input.btn(type='submit', value='Submit')

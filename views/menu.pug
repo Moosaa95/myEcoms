@@ -1,0 +1,57 @@
+extends layout
+
+block content
+    header
+        nav.navbar
+        a(href="/" class=text-white)
+            i.fab.fa-fa-pagelines   Store
+        
+        button.navbar-btn(type="button")
+
+        div.collapse#navbarCollapse
+            ul.navbar-nav.menu
+                li.nav-item
+                    a.nav-link(href="#")    Home
+                li.nav-item
+                    a.nav-link(href="#television")    Televisions
+                li.nav-item
+                    a.nav-link(href="#phone")    Phones
+                li.nav-item
+                    a.nav-link(href="#earpiece")    Earpieces
+            
+            form.form-inline
+                a.text-white.nav-link(href="/cart")
+                    i#cart_n.text-warning.fas.fa-shopping-cart Shopping cart 
+                        i(style="color:yellow", id="cart_n")
+                a.nav-link.text-white(href="/profile")
+                    i.far.fa-user User
+
+    main
+        div#myCarousel.carousel.slide
+            ol.carousel-indicators
+                li(style="z-index:102", data-target="#myCarousel")
+                li(style="z-index:102", data-target="#myCarousel")
+                li(style="z-index:102", data-target="#myCarousel")
+            
+            div.carousel-inner
+                div.carousel-item
+                    img(src="")
+                    div.container
+                        h1 Store
+                        p lorem
+                        p
+                            a.btn(href="#") Products
+        div.container.marketing
+            br
+            h2#television   Television
+            hr
+            div.row#televisionDiv
+            
+            h2#television   Television
+            hr
+            
+            h2#television   Television
+            div.row 
+            
+
+                    

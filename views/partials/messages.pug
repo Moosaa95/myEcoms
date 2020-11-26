@@ -1,0 +1,8 @@
+if(typeof errors != 'undefined')
+    .alert.alert-danger.alert-dismissible.fade.show(role="alert")
+    p
+    i.fas.fa-times-circle #{error.msg}
+    button.close(type="button" data-dismiss="alert" aria-label="Close")
+    span(aria-hidden="true") ×
+}
+
