@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    nav.navbar
+            a(href="/" class=text-white)
+                i.fab.fa-fa-pagelines   Store
+            
+            button.navbar-btn(type="button")
+
+            div.collapse#navbarCollapse
+                ul.navbar-nav.menu
+                    li.nav-item
+                        a.nav-link(href="/admin")    View Orders
+    div.container
+        div.row 
+            div.col 
+                form(action="/order" class="border border-warning" method="POST")
+                input(type="hidden" name="_id" value="#{order.id}")
+                div.form-group
+                    label Order
+                    input(type="text" class="form-control" value="#{order.name}" name="order")
+                div.form-group
+                    label Total
+                    input(type="text" class="form-control" value="#{order.total}" name="total")
+                div.form-group
+                    submit(type="submit" class="btn-success") Submit
+
+                
+

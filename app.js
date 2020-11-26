@@ -1,15 +1,16 @@
 require('./models/db')
-var express = require('express');
-var path = require('path');
+const express = require('express');
+const path = require('path');
 const flash = require("connect-flash");
 const session = require("express-session");
 const passport = require("passport");
 const bodyparser = require('body-parser')
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const orderController = require('./controllers/orderController')
 
 
-var app = express();
+const app = express();
 
 
 //passport config
@@ -55,12 +56,15 @@ app.use((req, res, next) => {
     //routes
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
+app.use('/', orderController)
 
 // catch 404 and forward to error handler
 /* app.use(function(req, res, next) {
     next(createError(404));
 });
  */
+
+
 app.listen(3000, () => {
     console.log("server started");
 })

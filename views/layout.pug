@@ -7,15 +7,19 @@ html(lang="en")
     link(rel="stylesheet" href="/stylesheets/style.css")
     title Ecommerce
   body
-    .container
+    .navbar
+      .container
+          h2 Ecommerce
+
+            if !firstName
+                a(href="/users/login") Log In
+                a(href="/users/register") Register
+            else
+                    h3 Hello #{firstName}
+                    a(href="/logout") Log Out
 
 
-  footer
-    div.container
-      p.float-right
-        a(href="#") TOP
-      div.row
-        p Project
+
 
       
     
