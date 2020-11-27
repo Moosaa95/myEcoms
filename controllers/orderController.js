@@ -13,14 +13,14 @@ router.get('/', (req, res) => {
 router.get('/cart', (req, res) => {
     res.render('cart')
 })
-router.get('/orders', (req, res) => {
+router.get('/order', (req, res) => {
     res.render('orders')
 })
-router.get('/admin', (req, res) => {
+router.get('/profile', (req, res) => {
 
     Order.find((err, docs) => {
         if (!err) {
-            res.render("admin", {
+            res.render("profile", {
                 order: docs
             })
         } else {
@@ -42,7 +42,7 @@ router.get('/order/:id', (res, req) => {
 router.get('/order/delete/:id', (req, res) => {
     Order.findByIdAndRemove(req.params.id, (err, doc) => {
         if (!err) {
-            res.redirect('/admin')
+            res.redirect('/profile')
 
         } else {
             console.log(`error in delete: ${err}`);
@@ -56,7 +56,7 @@ router.post('/cart', (req, res) => {
     insertOrder(req, res)
 })
 
-router.post('/order', (req, res) => {
+router.post('/orders', (req, res) => {
     updateOrder(req, res)
 })
 
@@ -64,7 +64,7 @@ router.post('/order', (req, res) => {
 function updateOrder(req, res) {
     Order.findByIdAndUpdate({ id: req.body._id }, req.body, { new: true }, (err, doc) => {
         if (!err) {
-            res.redirect('/admin')
+            res.redirect('/profile')
         } else {
             console.log(`Update error ${err}`);
         }
@@ -83,7 +83,7 @@ function insertOrder(req, res) {
     order.save((err, doc) => {
         if (!err) {
             console.log(`order:${order}`);
-            res.redirect('/admin')
+            res.redirect('/profile')
         } else {
             console.log(`error insertOrder ${err}`);
         }

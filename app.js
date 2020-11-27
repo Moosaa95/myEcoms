@@ -21,6 +21,8 @@ require("./config/passport")(passport)
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
 
+
+
 //bodyparser
 app.use(express.urlencoded({ extended: false }))
 app.use(bodyparser.urlencoded({
@@ -56,7 +58,7 @@ app.use((req, res, next) => {
     //routes
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
-app.use('/', orderController)
+app.use('/controllers', orderController)
 
 // catch 404 and forward to error handler
 /* app.use(function(req, res, next) {
@@ -65,6 +67,10 @@ app.use('/', orderController)
  */
 
 
-app.listen(3000, () => {
-    console.log("server started");
-})
+
+
+let port = process.env.PORT || 3000
+
+app.listen(port, () => {
+    console.log(`Server started on port ${port}`);
+});

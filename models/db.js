@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
         console.log('error' + err);
     }
 }) */
-mongoose.connect("mongodb://localhost/authen", { useNewUrlParser: true })
+mongoose.connect("mongodb://localhost:27017/authen", { useNewUrlParser: true })
     .then(() => console.log("db connected"))
     .catch(err => console.log(err))
 

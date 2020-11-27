@@ -1,26 +1,3 @@
 extends layout
 
 block content
-    ul#dropdown1.dropdown-content
-        if login
-            li
-            a(href='/users/profile') User Account
-            li
-            a(href='/users/logout') Logout
-        else
-            li
-            a(href='/users/login') login
-            li
-            a(href='/users/register') Register   
-        ul#dropdown2.dropdown-content
-        if login
-            li
-            a(href='/users/profile') User Account
-            li
-            a(href='/users/logout') Logout
-        else
-            li
-            a(href='/users/login') login
-            li
-            a(href='/users/register') Register   
-        

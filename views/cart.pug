@@ -1,37 +1,29 @@
-extends layout
-
-block content
-    header
-        nav.navbar
-        a(href="/" class=text-white)
-            i.fab.fa-fa-pagelines   Store
-        
-        button.navbar-btn(type="button")
-
-        div.collapse#navbarCollapse
-            ul.navbar-nav.menu
-                li.nav-item
-                    a.nav-link(href="/")    Home
-            
-            form.form-inline
-                a.text-white.nav-link(href="#")
-                    i.text-warning.fas.fa-shopping-cart Shopping cart 
-                a.nav-link.text-white(href="/profile")
-                    i.far.fa-user User
-    div.container
+nav.navbar
+    a(href="/")
+        i.fab.fa-fa-pagelines   Store
+    button.navbar-btn(type="button")
+    #navbarCollapse.collapse
+        ul.navbar-nav.menu
+            li.nav-item
+                a.nav-link(href="/")    Home
+    form.form-inline
+        a.text-white.nav-link(href="#")
+            i.text-warning.fas.fa-shopping-cart Shopping cart 
+        a.nav-link.text-white(href="/profile")
+            i.far.fa-user User
+    .container
         main
             div.row
                 div.col
                     div.table-res
-                        table.table 
+                        table.table
                             thead
                                 tr
                                     th(scope="col") #
-                                    th(scope="col") Product
+                                    th(scope="col") Prduct
                                     th(scope="col") Description
                                     th(scope="col") Quantity
                                     th(scope="col") Price
                             tbody#table
-            
             hr.feature-divide
 script(src="/js/cart.js")

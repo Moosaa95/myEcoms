@@ -9,15 +9,17 @@ html(lang="en")
   body
     .navbar
       .container
-          h2 Ecommerce
+          
+          div.header
+            h2 Ecommerce
+            div.signDetails
+              
+              a(href="/users/login") Log In
+              a(href="/users/register") Register
 
-            if !firstName
-                a(href="/users/login") Log In
-                a(href="/users/register") Register
-            else
-                    h3 Hello #{firstName}
-                    a(href="/logout") Log Out
-
+            
+                
+            
 
 
 

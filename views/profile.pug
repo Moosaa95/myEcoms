@@ -16,7 +16,7 @@ block content
                 div.col
                     h1  Orders
                     div.table-res
-                        table.table.table-striped
+                        table#table.table-striped
                             thead
                                 tr
                                     th  Id
@@ -25,9 +25,9 @@ block content
                                     th
                             
                             tbody
-                                each orders in order
+                                each order in orders
                                     tr
-                                        td = orders
+                                        td #{order}
                                         td
                                         
                                         a(href="/order#{_id}", class="btn") Update

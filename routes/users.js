@@ -4,6 +4,9 @@ const bcrypt = require('bcryptjs')
 const passport = require("passport")
 
 
+
+
+
 //user model 
 const User = require("../models/User")
 router.get("/login", (req, res) => {
@@ -81,7 +84,7 @@ router.post("/register", (req, res) => {
 //Login Handle to correspond with the LocalStragy
 router.post("/login", (req, res, next) => {
     passport.authenticate("local", {
-        successRedirect: "/dashboard",
+        successRedirect: "/controllers",
         failureRedirect: "/users/login",
         failureFlash: true
     })(req, res, next);
